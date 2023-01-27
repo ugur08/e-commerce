@@ -1,0 +1,73 @@
+<div class="row">
+  <div class="col-md-10">
+    <form class="d-flex w-75 me-auto ms-auto mt-2" role="search">
+      <input
+        class="form-control me-2"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+        id="product"
+        [ngModelOptions]="{ standalone: true }"
+        [(ngModel)]="filterText"
+      />
+    </form>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4">
+      <div class="col" *ngFor="let product of products | product : filterText">
+        <div class="card" routerLink="/product/{{ product.id }}">
+          <img
+            src="{{ product.imgUrl }}"
+            alt="Denim Jeans"
+            class="p-3 w-75 me-auto ms-auto"
+            style="height: 200px"
+          />
+          <h2>{{ product.brand }}</h2>
+          <h1>{{ product.name }}</h1>
+
+          <p class="price text-danger">
+            {{ product.price | currency : "TRY" : "symbol-narrow" }}
+          </p>
+          <p>{{ product.description }}</p>
+          <!-- <p><button class="rounded-5">Sepete Ekle</button></p> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-2">
+    <div class="container">
+      bunlar checkboxa dönecek
+
+      <label for="">CATEGORY</label>
+      <select
+        class="form-select"
+        name="categoryId"
+        id="categoryId"
+        [(ngModel)]="categoryFilter"
+      >
+        <option value="0">Kategori Seçiniz</option>
+        <option [value]="categor.id" *ngFor="let categor of category">
+          {{ categor.name }}
+        </option>
+      </select>
+      <label for="">MARKA</label>
+      <select
+        name="brand"
+        id="brand"
+        class="form-select"
+        [(ngModel)]="brandFilter"
+      >
+        <option value="0">Marka Seçiniz</option>
+        <option [value]="brand.id" *ngFor="let brand of brands">
+          {{ brand.name }}
+        </option>
+      </select>
+      <button
+        class="btn btn-success mt-3 w-100"
+        routerLink="/filter/{{ brandFilter }}/{{ categoryFilter }}"
+      >
+        Filtrele
+      </button>
+      <button class="btn btn-success w-100 mt-3" routerLink="/">Temizle</button>
+    </div>
+  </div>
+</div>

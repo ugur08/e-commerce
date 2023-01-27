@@ -1,0 +1,11 @@
+<ul class="list-group mt-3">
+  <li
+    [class]="getCurrentBrandClass(brand)"
+    (click)="setCurrentBrand(brand)"
+    *ngFor="let brand of brands"
+    routerLink="/brand/{{ brand.id }}"
+    aria-current="true"
+  >
+    {{ brand.name }}
+  </li>
+</ul>

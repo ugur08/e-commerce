@@ -1,3 +1,15 @@
 * {
   overflow: hidden;
 }
+.active {
+  color: red !important;
+}
+.a {
+  text-decoration: none;
+  color: black;
+}
+.a:hover {
+  transition: all 0.2s;
+  font-size: 25px;
+  color: red;
+}

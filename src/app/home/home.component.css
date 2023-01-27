@@ -1,0 +1,10 @@
+.hover:hover {
+  transform: scale(1.1);
+}
+
+.hover > img {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+.hover {
+  transition: all 0.9s;
+}

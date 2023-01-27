@@ -1,6 +1,17 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+<div class="bg-body-tertiary border">
+  <div class="container">
+    <ul class="d-flex mt-2 gap-5">
+      <li class="me-2"><a href="" class="a"> Anasayfa</a></li>
+      <li class="me-2"><a href="" class="a"> Hakkımızda</a></li>
+      <li class="me-2"><a href="" class="a"> Sözleşmeler</a></li>
+      <li class="me-2"><a href="" class="a"> İletişim</a></li>
+    </ul>
+  </div>
+</div>
+
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand me-5" href="#">Navbar</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -13,43 +24,37 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Dropdown
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
-        </li>
-      </ul>
-      <form class="d-flex" role="search">
+      <form class="d-flex w-75" role="search">
         <input
           class="form-control me-2"
           type="search"
           placeholder="Search"
           aria-label="Search"
         />
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <button class="btn btn-outline-success w-50" type="submit">
+          Search
+        </button>
       </form>
+      <button class="btn btn-success ms-auto m-2">Giriş Yap</button>
+      <button class="btn btn-success">Sepetim</button>
     </div>
+  </div>
+</nav>
+
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#">Home</a>
+      </li>
+      <li class="nav-item" *ngFor="let category of categories">
+        <a
+          [class]="getCurrentCategoryClass(category)"
+          (click)="setCurrentCategory(category)"
+          routerLink="/category/{{ category.id }}"
+          >{{ category.name }}
+        </a>
+      </li>
+    </ul>
   </div>
 </nav>
