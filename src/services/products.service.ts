@@ -21,4 +21,10 @@ export class ProductsService {
       this.apiUrl + 'products' + '?brand=' + brand + '&categoryId=' + categoryId
     );
   }
+  add(value: any) {
+    return this.http.post(this.apiUrl + 'products', value);
+  }
+  delete(products) {
+    return this.http.delete(this.apiUrl + 'products/' + products.id);
+  }
 }

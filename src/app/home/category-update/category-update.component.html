@@ -1,0 +1,13 @@
+<app-dnavbar></app-dnavbar>
+<div class="container">
+  <form *ngIf="categoryForm" [formGroup]="categoryForm">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Name</label>
+      <input type="text" class="form-control" formControlName="name" />
+    </div>
+
+    <button type="submit" (click)="update()" class="btn btn-primary">
+      Ekle
+    </button>
+  </form>
+</div>

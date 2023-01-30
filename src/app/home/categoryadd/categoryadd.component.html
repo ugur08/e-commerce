@@ -1,0 +1,40 @@
+<app-dnavbar></app-dnavbar>
+
+<div class="container mt-3">
+  <button class="btn btn-success w-100" routerLink="/dash/categoryaddd">
+    Kategori Ekle
+  </button>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">name</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let category of categories">
+        <th scope="row">{{ category.id }}</th>
+        <td>{{ category.name }}</td>
+        <td>
+          <button
+            class="btn btn-primary"
+            routerLink="/categoryupdate/{{ category.id }}"
+          >
+            Güncelle
+          </button>
+        </td>
+        <td>
+          <button
+            class="btn btn-danger"
+            type="button"
+            (click)="delete(category.id)"
+          >
+            Sil
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

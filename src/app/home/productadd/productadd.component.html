@@ -1,0 +1,90 @@
+<app-dnavbar></app-dnavbar>
+
+<div class="container">
+  <!-- <button class="btn btn-success w-100" routerLink="/dash/productaddd">
+    Ürün Ekle
+  </button> -->
+  <!-- Button trigger modal -->
+  <button
+    type="button"
+    class="btn btn-success w-100 mt-3"
+    data-bs-toggle="modal"
+    data-bs-target="#exampleModal"
+  >
+    Launch demo modal
+  </button>
+
+  <!-- Modal -->
+  <div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <app-productaddform> </app-productaddform>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">name</th>
+        <th scope="col">brand</th>
+        <th scope="col">price</th>
+        <th scope="col">categoryId</th>
+        <th scope="col">rating</th>
+        <th scope="col">cargo</th>
+        <th scope="col">description</th>
+        <th scope="col">imgUrl</th>
+        <th scope="col">stock</th>
+        <th scope="col">state</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <th scope="row">{{ product.id }}</th>
+        <td style="width: 100px">{{ product.name }}</td>
+        <td style="width: 50px">{{ product.brand }}</td>
+        <td style="width: 50px">{{ product.price }}</td>
+        <td style="width: 50px">{{ product.categoryId }}</td>
+        <td style="width: 50px">{{ product.rating }}</td>
+        <td style="width: 120px">{{ product.cargo }}</td>
+        <td style="width: 200px">{{ product.description }}</td>
+        <td>
+          <img src="{{ product.imgUrl }}" style="width: 70px; height: 100px" />
+        </td>
+        <td style="width: 50px">{{ product.stock }}</td>
+        <td style="width: 50px">{{ product.state }}</td>
+        <td><button class="btn btn-primary">Güncelle</button></td>
+        <td>
+          <button class="btn btn-danger" (click)="delete(product)">Sil</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

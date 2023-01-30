@@ -21,4 +21,16 @@ export class BrandService {
       this.apiUrl + 'products' + '?brand=' + brand
     );
   }
+  getBrandById(id): Observable<BrandModel> {
+    return this.http.get<BrandModel>(this.apiUrl + 'brands/' + id);
+  }
+  add(value: any) {
+    return this.http.post(this.apiUrl + 'brands', value);
+  }
+  delete(id: number) {
+    return this.http.delete(this.apiUrl + 'brands/' + id);
+  }
+  update(id, data: any) {
+    return this.http.put(this.apiUrl + 'brands/' + id, data);
+  }
 }
