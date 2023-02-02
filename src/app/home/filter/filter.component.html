@@ -1,0 +1,34 @@
+<label for="">Kategori Seçiniz</label>
+<select
+  size="5"
+  multiple
+  class="form-select"
+  name="categoryId"
+  id="categoryId"
+  [(ngModel)]="categoryFilter"
+>
+  <option value="0">Kategori Seçiniz</option>
+  <option [value]="categor.id" *ngFor="let categor of category">
+    {{ categor.name }}
+  </option>
+</select>
+<label for="">Marka Seçiniz</label>
+<select
+  size="5"
+  multiple
+  name="brand"
+  id="brand"
+  class="form-select"
+  [(ngModel)]="brandFilter"
+>
+  <option value="0">Marka Seçiniz</option>
+  <option [value]="brand.id" *ngFor="let brand of brands">
+    {{ brand.name }}
+  </option>
+</select>
+<button
+  class="btn btn-success mt-3 w-100"
+  routerLink="/filter/{{ brandFilter }}/{{ categoryFilter }}"
+>
+  Filtrele
+</button>

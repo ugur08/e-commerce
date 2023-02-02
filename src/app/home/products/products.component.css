@@ -1,32 +1,97 @@
-.card {
-  max-width: 300px;
-  margin: 5px;
-  text-align: center;
-  font-family: arial;
-  border: none;
-  transition: all 0.9s;
-}
-.card:hover {
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-  transform: scale(1.1);
+* {
+  text-transform: uppercase;
 }
 .price {
   color: grey;
   font-size: 22px;
 }
 
-.card button {
-  border: none;
-  outline: 0;
-  padding: 12px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  width: 75%;
-  font-size: 18px;
+.card {
+  border-radius: 20px;
+  background: #ffffff;
+  height: 400px;
+  position: relative;
+  padding: 1rem;
+  border: 2px solid #ffffff;
+  transition: 0.5s ease-out;
+  overflow: visible;
+  margin: 10px;
 }
 
-.card button:hover {
-  opacity: 0.7;
+.card-details {
+  color: black;
+  height: 100%;
+  gap: 0.5em;
+  display: grid;
+  place-content: center;
+}
+
+.card-button {
+  transform: translate(-50%, 125%);
+  width: 60%;
+  border-radius: 1rem;
+  border: none;
+  background-color: #198754;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  opacity: 0;
+  transition: 0.3s ease-out;
+}
+i {
+  width: 20%;
+  border-radius: 1rem;
+  border: none;
+  background-color: black;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  position: absolute;
+  right: 38%;
+  bottom: 0;
+  opacity: 0;
+  transition: 0.3s ease-out;
+  display: flex;
+  justify-content: center;
+}
+
+.card:hover {
+  border-color: black;
+  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+
+.card:hover .card-button {
+  transform: translate(-50%, 50%);
+  opacity: 1;
+}
+.card:hover i {
+  transform: translate(0px, -220px);
+  opacity: 1;
+}
+
+.remove {
+  margin-top: 55px;
+}
+.input {
+  border: none;
+  border-radius: 15px;
+  padding: 15px;
+  background-color: #e8e8e8;
+  box-shadow: 6px 6px 12px #ffffff, -6px -6px 12px #c5c5c5;
+  font-size: medium;
+  font-weight: bold;
+  width: 600px;
+  margin-top: 20px;
+  margin-left: 200px;
+}
+
+.input:focus {
+  place-content: "Enter your message!";
+}
+.input:hover {
+  outline-color: #008bf8;
+  box-shadow: 0 4px 18px 0 #008bf8;
 }

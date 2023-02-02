@@ -23,7 +23,8 @@ import { CategoryUpdateComponent } from './home/category-update/category-update.
 import { BrandaddformComponent } from './home/brandaddform/brandaddform.component';
 import { BrandupdateComponent } from './home/brandupdate/brandupdate.component';
 import { ProductaddformComponent } from './home/productaddform/productaddform.component';
-
+import { LoginComponent } from './home/login/login.component';
+import { FilterComponent } from './home/filter/filter.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +45,8 @@ import { ProductaddformComponent } from './home/productaddform/productaddform.co
     BrandaddformComponent,
     BrandupdateComponent,
     ProductaddformComponent,
+    LoginComponent,
+    FilterComponent,
   ],
   imports: [
     BrowserModule,

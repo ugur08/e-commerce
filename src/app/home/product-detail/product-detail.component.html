@@ -57,9 +57,13 @@
                         class="add-to-cart btn btn-default"
                         routerLink="/"
                         type="button"
+                        *ngIf="userName"
                       >
                         sepete ekle
                       </button>
+                      <p *ngIf="!userName">
+                        Sepete Ekleyebilmeniz için giriş yapmanız lazım
+                      </p>
                       <button
                         class="like btn btn-default"
                         routerLink="/"

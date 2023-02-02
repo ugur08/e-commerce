@@ -14,7 +14,7 @@
 
     <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4">
       <div class="col" *ngFor="let product of products | product : filterText">
-        <div class="card" routerLink="/product/{{ product.id }}">
+        <!-- <div class="card" routerLink="/product/{{ product.id }}">
           <img
             src="{{ product.imgUrl }}"
             alt="Denim Jeans"
@@ -28,46 +28,38 @@
             {{ product.price | currency : "TRY" : "symbol-narrow" }}
           </p>
           <p>{{ product.description }}</p>
-          <!-- <p><button class="rounded-5">Sepete Ekle</button></p> -->
+        </div> -->
+        <div class="card">
+          <img src="{{ product.imgUrl }}" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <tbody>
+              <h5 class="card-title">
+                {{ product.name }}
+              </h5>
+              <p class="price text-danger">
+                {{ product.price | currency : "TRY" : "symbol-narrow" }}
+              </p>
+
+              <button
+                class="card-button"
+                routerLink="product/{{ product.id }}"
+                href="#"
+              >
+                Detay
+              </button>
+
+              <i class="bi bi-trash3-fill" type="submit">
+                {{ product.brand }}</i
+              >
+            </tbody>
+          </div>
         </div>
       </div>
     </div>
   </div>
   <div class="col-md-2">
     <div class="container">
-      bunlar checkboxa dönecek
-
-      <label for="">CATEGORY</label>
-      <select
-        class="form-select"
-        name="categoryId"
-        id="categoryId"
-        [(ngModel)]="categoryFilter"
-      >
-        <option value="0">Kategori Seçiniz</option>
-        <option [value]="categor.id" *ngFor="let categor of category">
-          {{ categor.name }}
-        </option>
-      </select>
-      <label for="">MARKA</label>
-      <select
-        name="brand"
-        id="brand"
-        class="form-select"
-        [(ngModel)]="brandFilter"
-      >
-        <option value="0">Marka Seçiniz</option>
-        <option [value]="brand.id" *ngFor="let brand of brands">
-          {{ brand.name }}
-        </option>
-      </select>
-      <button
-        class="btn btn-success mt-3 w-100"
-        routerLink="/filter/{{ brandFilter }}/{{ categoryFilter }}"
-      >
-        Filtrele
-      </button>
-      <button class="btn btn-success w-100 mt-3" routerLink="/">Temizle</button>
+      <app-filter></app-filter>
     </div>
   </div>
 </div>

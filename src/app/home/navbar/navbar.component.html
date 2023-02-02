@@ -24,18 +24,106 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <form class="d-flex w-75" role="search">
-        <input
-          class="form-control me-2"
-          type="search"
-          placeholder="Search"
-          aria-label="Search"
-        />
-        <button class="btn btn-outline-success w-50" type="submit">
-          Search
+      <form class="w-75" role="search"></form>
+      <button
+        type="button"
+        class="btn btn-success me-2 ms-auto"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+        *ngIf="!userName"
+      >
+        Giriş Yap
+      </button>
+
+      <div class="dropdown me-3" *ngIf="userName">
+        <button
+          class="btn btn-success dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          {{ userName }} {{ lastName }}
         </button>
-      </form>
-      <button class="btn btn-success ms-auto m-2">Giriş Yap</button>
+        <ul class="dropdown-menu">
+          <section style="width: 500px">
+            <div class="container">
+              <div class="row d-flex">
+                <div class="col col-md-9 col-lg-7 col-xl-5">
+                  <div class="card" style="border-radius: 15px">
+                    <div class="card-body">
+                      <div class="d-flex text-black">
+                        <div class="flex-shrink-0">
+                          <img
+                            src="{{ imgUrl }}"
+                            alt="Generic placeholder image"
+                            class="img-fluid"
+                            style="width: 180px; border-radius: 10px"
+                          />
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                          <h5 class="mb-1">{{ userName }}{{ lastName }}</h5>
+                          <p class="mb-2 pb-1" style="color: #2b2a2a">
+                            {{ role }}
+                          </p>
+                          <div
+                            class="d-flex justify-content-start rounded-3 p-2 mb-2"
+                            style="background-color: #efefef"
+                          >
+                            <p>{{ email }}</p>
+                          </div>
+                          <div class="d-flex pt-1">
+                            <button
+                              type="button"
+                              class="btn btn-outline-primary me-1 flex-grow-1"
+                              (click)="logOut()"
+                            >
+                              Çıkış Yap
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </ul>
+      </div>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <app-login></app-login>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
       <button class="btn btn-success">Sepetim</button>
     </div>
   </div>

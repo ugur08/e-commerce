@@ -1,9 +1,51 @@
 <app-dnavbar></app-dnavbar>
 
 <div class="container mt-3">
-  <button class="btn btn-success w-100" routerLink="/dash/categoryaddd">
+  <!-- <button class="btn btn-success w-100" routerLink="/dash/categoryaddd">
+    Kategori Ekle
+  </button> -->
+  <button
+    type="button"
+    class="btn btn-success w-100 mt-3"
+    data-bs-toggle="modal"
+    data-bs-target="#exampleModal"
+  >
     Kategori Ekle
   </button>
+
+  <!-- Modal -->
+  <div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <app-categoryadd-form> </app-categoryadd-form>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
   <table class="table">
     <thead>
       <tr>

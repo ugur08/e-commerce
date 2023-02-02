@@ -12,6 +12,7 @@ import { ProductDetailComponent } from './home/product-detail/product-detail.com
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
   {
@@ -26,21 +27,47 @@ const routes: Routes = [
   { path: 'brand/:brand', component: HomeComponent },
   { path: 'category/:categoryId', component: HomeComponent },
   { path: 'filter/:brand/:categoryId', component: HomeComponent },
-  { path: 'dash', component: DashboardComponent },
-  { path: 'dash/productadd', component: ProductaddComponent },
-  { path: 'dash/productaddd', component: ProductaddformComponent },
+  { path: 'dash', component: DashboardComponent, canActivate: [LoginGuard] },
+  {
+    path: 'dash/productadd',
+    component: ProductaddComponent,
+    canActivate: [LoginGuard],
+  },
+  {
+    path: 'dash/productaddd',
+    component: ProductaddformComponent,
+    canActivate: [LoginGuard],
+  },
 
-  { path: 'dash/brand', component: DashbrandComponent },
-  { path: 'dash/categoryadd', component: CategoryaddComponent },
-  { path: 'dash/categoryaddd', component: CategoryaddFormComponent },
+  {
+    path: 'dash/brand',
+    component: DashbrandComponent,
+    canActivate: [LoginGuard],
+  },
+  {
+    path: 'dash/categoryadd',
+    component: CategoryaddComponent,
+    canActivate: [LoginGuard],
+  },
+  {
+    path: 'dash/categoryaddd',
+    component: CategoryaddFormComponent,
+    canActivate: [LoginGuard],
+  },
   {
     path: 'categoryupdate/:id',
     component: CategoryUpdateComponent,
+    canActivate: [LoginGuard],
   },
-  { path: 'dash/brandaddd', component: BrandaddformComponent },
+  {
+    path: 'dash/brandaddd',
+    component: BrandaddformComponent,
+    canActivate: [LoginGuard],
+  },
   {
     path: 'brandupdate/:id',
     component: BrandupdateComponent,
+    canActivate: [LoginGuard],
   },
 ];
 

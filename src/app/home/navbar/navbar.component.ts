@@ -9,12 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
   constructor(private categoryService: CategoryService) {}
+  userName: string;
+  role: string;
+  lastName: string;
+  imgUrl: string;
+  email: string;
   categories: CategoryModel[] = [];
   filterText: string;
   currentCategory: CategoryModel;
 
   ngOnInit(): void {
     this.getCategory();
+    this.userName = localStorage.getItem('name');
+    this.role = localStorage.getItem('role');
+    this.lastName = localStorage.getItem('lastName');
+    this.imgUrl = localStorage.getItem('image');
+    this.email = localStorage.getItem('email');
   }
 
   getCategory() {
@@ -33,5 +43,15 @@ export class NavbarComponent implements OnInit {
     } else {
       return 'nav-link';
     }
+  }
+
+  logOut() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('role');
+    localStorage.removeItem('name');
+    localStorage.removeItem('lastName');
+    localStorage.removeItem('image');
+    localStorage.removeItem('email');
+    window.location.reload();
   }
 }

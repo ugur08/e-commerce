@@ -1,0 +1,45 @@
+<form [formGroup]="loginForm" class="card-body cardbody-color p-lg-5">
+  <div class="text-center">
+    <img
+      src="https://t3.ftcdn.net/jpg/02/76/92/60/360_F_276926042_iJjGU3S5pfmsyWkYBfhekgR5FLTduesS.jpg"
+      class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
+      width="200px"
+      alt="profile"
+    />
+  </div>
+
+  <div class="mb-3">
+    <input
+      type="text"
+      formControlName="email"
+      class="form-control"
+      id="Username"
+      aria-describedby="emailHelp"
+      placeholder="Mail adresiniz"
+    />
+  </div>
+  <div class="mb-3">
+    <input
+      type="password"
+      formControlName="password"
+      class="form-control"
+      id="password"
+      placeholder="Şifreniz"
+    />
+  </div>
+  <div class="text-center">
+    <button
+      (click)="login()"
+      type="submit"
+      class="btn btn-color px-5 mb-5 w-100"
+    >
+      Giriş Yap
+    </button>
+  </div>
+  <div id="emailHelp" class="form-text text-center mb-5 text-dark">
+    Üye Değilmisin?
+    <a href="#" class="text-dark fw-bold" routerLink="/register">
+      Hemen Hesap Oluştur</a
+    >
+  </div>
+</form>

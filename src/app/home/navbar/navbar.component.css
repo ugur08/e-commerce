@@ -1,15 +1,15 @@
-* {
-  overflow: hidden;
-}
 .active {
   color: red !important;
+}
+ul {
+  list-style: none;
 }
 .a {
   text-decoration: none;
   color: black;
 }
 .a:hover {
-  transition: all 0.2s;
+  transition: all 0s;
   font-size: 25px;
   color: red;
 }

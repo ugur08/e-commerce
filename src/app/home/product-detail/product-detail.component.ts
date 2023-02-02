@@ -11,6 +11,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductDetailComponent implements OnInit {
   products: Product[] = [];
+  userName: string;
   constructor(
     private product: ProductDetailService,
     private activatedRoute: ActivatedRoute
@@ -20,6 +21,7 @@ export class ProductDetailComponent implements OnInit {
     this.activatedRoute.params.subscribe((params) => {
       this.getProductDetails(params['id']);
     });
+    this.userName = localStorage.getItem('name');
   }
 
   getProductDetails(id) {
