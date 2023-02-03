@@ -21,7 +21,7 @@ export class ProductsComponent implements OnInit {
   ) {}
   /* Tüm ürünlerin */ products: Product[] = [];
   /* Search yapmak için */ filterText: string;
-  /* Brandlerin*/ brands: BrandModel[] = [];
+  /* Brandlerin*/ asd: BrandModel[] = [];
   /* Categorilerin*/ category: CategoryModel[] = [];
   /*Filtre yaptığımızda */ brandFilter: number = 0;
   /*Filtre yaptığımızda */ categoryFilter: number = 0;
@@ -86,7 +86,7 @@ export class ProductsComponent implements OnInit {
   }
   getBrand() {
     this.brandService.getBrand().subscribe((data) => {
-      this.brands = data;
+      this.asd = data;
     });
   }
 }

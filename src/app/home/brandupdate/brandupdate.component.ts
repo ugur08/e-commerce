@@ -48,7 +48,7 @@ export class BrandupdateComponent implements OnInit {
       .subscribe((data) => {
         this.toastrService.success('Başarılı Güncellenmiştir');
         setTimeout(() => {
-          this.router.navigate(['/dash/brandadd']);
+          this.router.navigate(['/dash/brand']);
         }, 3000);
       });
   }

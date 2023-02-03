@@ -27,4 +27,10 @@ export class ProductsService {
   delete(products) {
     return this.http.delete(this.apiUrl + 'products/' + products.id);
   }
+  update(id, data: any) {
+    return this.http.put<Product>(this.apiUrl + 'products/' + id, data);
+  }
+  getProductsByIde(productId): Observable<Product> {
+    return this.http.get<Product>(this.apiUrl + 'products/' + productId);
+  }
 }

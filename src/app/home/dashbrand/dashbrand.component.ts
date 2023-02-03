@@ -31,6 +31,7 @@ export class DashbrandComponent implements OnInit {
       this.brands = this.brands.filter((b) => b !== id);
       this.brandService.delete(id.id).subscribe();
       this.toastrService.error('başarılı silinmiştir');
+      this.router.navigate(['/dash/brand']);
     }
   }
 }

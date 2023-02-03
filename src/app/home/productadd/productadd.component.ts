@@ -1,3 +1,4 @@
+import { ToastrService } from 'ngx-toastr';
 import { Product } from 'src/models/ProductModel';
 import { ProductsService } from 'src/services/products.service';
 import { Component, OnInit } from '@angular/core';
@@ -9,7 +10,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductaddComponent implements OnInit {
   products: Product[] = [];
-  constructor(private productsService: ProductsService) {}
+  constructor(
+    private productsService: ProductsService,
+    private toastrService: ToastrService
+  ) {}
 
   ngOnInit(): void {
     this.getProducts();
@@ -22,6 +26,7 @@ export class ProductaddComponent implements OnInit {
   }
   delete(products: Product): void {
     if (confirm('Silmek istediğinize emin misiniz?')) {
+      this.toastrService.error('Başarılı Silindi');
       this.products = this.products.filter((b) => b !== products);
       this.productsService.delete(products).subscribe();
     }

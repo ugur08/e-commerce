@@ -47,11 +47,14 @@
               >
                 Detay
               </button>
-
-              <i class="bi bi-trash3-fill" type="submit">
-                {{ product.brand }}</i
-              >
             </tbody>
+            <i
+              class="bi bi-trash3-fill"
+              type="submit"
+              *ngFor="let brandasd of asd"
+            >
+              {{ brandasd.name }}</i
+            >
           </div>
         </div>
       </div>

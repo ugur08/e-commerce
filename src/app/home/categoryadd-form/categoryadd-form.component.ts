@@ -33,6 +33,8 @@ export class CategoryaddFormComponent implements OnInit {
   add() {
     this.categoryService.add(this.categoryAdd.value).subscribe((data) => {});
     this.toastr.success(this.categoryAdd.value.name);
-    this.router.navigate(['/dash/categoryadd']);
+    setTimeout(() => {
+      window.location.reload();
+    }, 1000);
   }
 }

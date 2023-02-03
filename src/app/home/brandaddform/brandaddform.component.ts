@@ -31,7 +31,9 @@ export class BrandaddformComponent implements OnInit {
   add() {
     this.brandService.add(this.brandAdd.value).subscribe((data) => {
       this.toastrService.success('başarılı eklenmiştir');
-      this.router.navigate(['/dash/brandadd']);
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000);
     });
   }
 }

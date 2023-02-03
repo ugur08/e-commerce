@@ -25,6 +25,11 @@ import { BrandupdateComponent } from './home/brandupdate/brandupdate.component';
 import { ProductaddformComponent } from './home/productaddform/productaddform.component';
 import { LoginComponent } from './home/login/login.component';
 import { FilterComponent } from './home/filter/filter.component';
+import { ProductUpdateComponent } from './home/product-update/product-update.component';
+import { CartComponent } from './home/cart/cart.component';
+import { StoreModule } from '@ngrx/store';
+import { RouterModule } from '@angular/router';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,6 +52,8 @@ import { FilterComponent } from './home/filter/filter.component';
     ProductaddformComponent,
     LoginComponent,
     FilterComponent,
+    ProductUpdateComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,6 +63,8 @@ import { FilterComponent } from './home/filter/filter.component';
     ReactiveFormsModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
+    StoreModule.forRoot({}, {}),
+    RouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

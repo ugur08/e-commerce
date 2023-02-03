@@ -1,3 +1,4 @@
+import { ProductUpdateComponent } from './home/product-update/product-update.component';
 import { ProductaddformComponent } from './home/productaddform/productaddform.component';
 import { BrandupdateComponent } from './home/brandupdate/brandupdate.component';
 import { BrandaddformComponent } from './home/brandaddform/brandaddform.component';
@@ -67,6 +68,11 @@ const routes: Routes = [
   {
     path: 'brandupdate/:id',
     component: BrandupdateComponent,
+    canActivate: [LoginGuard],
+  },
+  {
+    path: 'dash/productupdate/:id',
+    component: ProductUpdateComponent,
     canActivate: [LoginGuard],
   },
 ];

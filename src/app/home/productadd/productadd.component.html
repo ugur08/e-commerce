@@ -80,7 +80,14 @@
         </td>
         <td style="width: 50px">{{ product.stock }}</td>
         <td style="width: 50px">{{ product.state }}</td>
-        <td><button class="btn btn-primary">Güncelle</button></td>
+        <td>
+          <button
+            class="btn btn-primary"
+            routerLink="/dash/productupdate/{{ product.id }}"
+          >
+            Güncelle
+          </button>
+        </td>
         <td>
           <button class="btn btn-danger" (click)="delete(product)">Sil</button>
         </td>
