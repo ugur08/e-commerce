@@ -29,6 +29,9 @@ import { ProductUpdateComponent } from './home/product-update/product-update.com
 import { CartComponent } from './home/cart/cart.component';
 import { StoreModule } from '@ngrx/store';
 import { RouterModule } from '@angular/router';
+import { cartReducer } from 'src/store/redusers/cart-reduser';
+import { RegisterComponent } from './home/register/register.component';
+import { FooterComponent } from './home/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +57,8 @@ import { RouterModule } from '@angular/router';
     FilterComponent,
     ProductUpdateComponent,
     CartComponent,
+    RegisterComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,7 +68,7 @@ import { RouterModule } from '@angular/router';
     ReactiveFormsModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot({ cartReducer }),
     RouterModule,
   ],
   providers: [],

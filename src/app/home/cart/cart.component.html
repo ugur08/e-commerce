@@ -1,1 +1,39 @@
-<p>cart works!</p>
+<div class="container">
+  <h3>Sepet İşlemleri</h3>
+  <h6>Sepetinizde Ürün Bulunmamaktadır</h6>
+
+  <div
+    class="card col-md-9 p-3"
+    style="margin-right: 20rem"
+    *ngFor="let car of cart"
+  >
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="{{ car.imgUrl }}" class="img-fluid rounded-start" alt="..." />
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{ car.name }}</h5>
+
+          <h5>{{ car.price }}$</h5>
+          <div class="d-flex">
+            <button class="btn btn-danger" (click)="deleteProduct(car)">
+              Sepetten Çıkar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-success" routerLink="/pay">Ödeme</button>
+</div>
+
+<div class="container col-md-3 mt-5" style="margin-right: 20rem">
+  <div class="row">
+    <div class="card" style="width: 18rem">
+      <div class="card-body">
+        <h5 class="card-title">{{ totalPrice }}asd</h5>
+      </div>
+    </div>
+  </div>
+</div>

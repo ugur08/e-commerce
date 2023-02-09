@@ -1,6 +1,7 @@
-<label for="">Kategori Seçiniz</label>
+<label for="" class="h5">Kategori Seçiniz</label>
+<hr />
 <select
-  size="5"
+  size="{{ categoryLength }}"
   multiple
   class="form-select"
   name="categoryId"
@@ -12,9 +13,10 @@
     {{ categor.name }}
   </option>
 </select>
-<label for="">Marka Seçiniz</label>
+<label for="" class="h5 mt-3">Marka Seçiniz</label>
+<hr />
 <select
-  size="5"
+  size="{{ brandLength }}"
   multiple
   name="brand"
   id="brand"

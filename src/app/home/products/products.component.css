@@ -88,10 +88,10 @@ i {
   margin-left: 200px;
 }
 
-.input:focus {
-  place-content: "Enter your message!";
-}
 .input:hover {
   outline-color: #008bf8;
   box-shadow: 0 4px 18px 0 #008bf8;
+}
+.active {
+  color: orange;
 }

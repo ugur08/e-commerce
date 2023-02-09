@@ -1,3 +1,5 @@
+import { RegisterComponent } from './home/register/register.component';
+import { CartComponent } from './home/cart/cart.component';
 import { ProductUpdateComponent } from './home/product-update/product-update.component';
 import { ProductaddformComponent } from './home/productaddform/productaddform.component';
 import { BrandupdateComponent } from './home/brandupdate/brandupdate.component';
@@ -75,6 +77,8 @@ const routes: Routes = [
     component: ProductUpdateComponent,
     canActivate: [LoginGuard],
   },
+  { path: 'pay', component: CartComponent },
+  { path: 'register', component: RegisterComponent },
 ];
 
 @NgModule({

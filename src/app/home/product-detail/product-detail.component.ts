@@ -1,8 +1,10 @@
+import { Store } from '@ngrx/store';
 import { ActivatedRoute } from '@angular/router';
 import { ProductDetailService } from './../../../services/product-detail.service';
 import { Product } from './../../../models/ProductModel';
 import { ProductsService } from './../../../services/products.service';
 import { Component, OnInit } from '@angular/core';
+import { AddProduct } from 'src/store/actions/cart-action';
 
 @Component({
   selector: 'app-product-detail',
@@ -14,7 +16,8 @@ export class ProductDetailComponent implements OnInit {
   userName: string;
   constructor(
     private product: ProductDetailService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private store: Store<any>
   ) {}
 
   ngOnInit(): void {
@@ -28,5 +31,9 @@ export class ProductDetailComponent implements OnInit {
     this.product.getProductDetail(id).subscribe((data) => {
       this.products = data;
     });
+  }
+  addToCart(product: Product) {
+    this.store.dispatch(new AddProduct(product));
+    alert('Sepete Eklendi');
   }
 }

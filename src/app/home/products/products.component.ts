@@ -19,12 +19,14 @@ export class ProductsComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private brandService: BrandService
   ) {}
+
   /* Tüm ürünlerin */ products: Product[] = [];
   /* Search yapmak için */ filterText: string;
   /* Brandlerin*/ asd: BrandModel[] = [];
   /* Categorilerin*/ category: CategoryModel[] = [];
   /*Filtre yaptığımızda */ brandFilter: number = 0;
   /*Filtre yaptığımızda */ categoryFilter: number = 0;
+  producte: any;
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
@@ -57,7 +59,7 @@ export class ProductsComponent implements OnInit {
       }
     });
   }
-  //tüm ürünlerin listelenmesi için
+  //apideki ilk 10 ürünü yayınlanması için
   getProduct() {
     this.product.getProducts().subscribe((data) => {
       this.products = data;

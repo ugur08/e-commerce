@@ -22,6 +22,7 @@
     "@ngrx/store": "^14.2.3",
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.3",
+    "bootstrap-icons": "^1.10.3",
     "jquery": "^3.6.1",
     "ngx-toastr": "^11.3.3",
     "rxjs": "~7.5.0",

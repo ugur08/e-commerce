@@ -8,3 +8,6 @@
 .hover {
   transition: all 0.9s;
 }
+* {
+  overflow: hidden;
+}

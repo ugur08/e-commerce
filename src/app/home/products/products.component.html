@@ -39,7 +39,7 @@
               <p class="price text-danger">
                 {{ product.price | currency : "TRY" : "symbol-narrow" }}
               </p>
-
+              <div class="rating mb-2"></div>
               <button
                 class="card-button"
                 routerLink="product/{{ product.id }}"
@@ -48,13 +48,6 @@
                 Detay
               </button>
             </tbody>
-            <i
-              class="bi bi-trash3-fill"
-              type="submit"
-              *ngFor="let brandasd of asd"
-            >
-              {{ brandasd.name }}</i
-            >
           </div>
         </div>
       </div>

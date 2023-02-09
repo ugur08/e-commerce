@@ -1,3 +1,4 @@
+import { RegisterModel } from './../models/RegisterModel';
 import { TokenModel } from './../models/TokenModel';
 import { HttpClient } from '@angular/common/http';
 import { LoginModel } from './../models/LoginModel';
@@ -26,5 +27,9 @@ export class AutServiceService {
 
   logout() {
     localStorage.clear();
+  }
+
+  register(user: RegisterModel) {
+    return this.http.post(this.apiUrl, user);
   }
 }

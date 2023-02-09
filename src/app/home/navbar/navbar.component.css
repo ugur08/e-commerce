@@ -1,5 +1,5 @@
 .active {
-  color: red !important;
+  color: green !important;
 }
 ul {
   list-style: none;
@@ -10,6 +10,19 @@ ul {
 }
 .a:hover {
   transition: all 0s;
-  font-size: 25px;
-  color: red;
+  color: green;
+}
+.hover:hover {
+  z-index: 2;
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  transform: scale(1.2);
+}
+.menufix {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  z-index: 1;
 }

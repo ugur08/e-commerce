@@ -14,6 +14,8 @@ export class FilterComponent implements OnInit {
   category: CategoryModel[] = [];
   /*Filtre yaptığımızda */ brandFilter: number = 0;
   /*Filtre yaptığımızda */ categoryFilter: number = 0;
+  brandLength: number;
+  categoryLength: number;
   constructor(
     private brandService: BrandService,
     private categoryService: CategoryService
@@ -27,11 +29,13 @@ export class FilterComponent implements OnInit {
   getCategory() {
     this.categoryService.getCategory().subscribe((data) => {
       this.category = data;
+      this.categoryLength = this.category.length + 1;
     });
   }
   getBrand() {
     this.brandService.getBrand().subscribe((data) => {
       this.brands = data;
+      this.brandLength = this.brands.length + 1;
     });
   }
 }
