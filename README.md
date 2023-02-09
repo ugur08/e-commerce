@@ -7,3 +7,4 @@ TypeScript-Angular Ngrx, Rxjs, Reactive Forms
 Css-Bootsrap-Bootstrap İcons
 
 #
+<img src="https://github.com/ugur08/e-commerce/blob/main/9826699d-a324-458b-9f08-83ccee834176.gif?raw=true">
