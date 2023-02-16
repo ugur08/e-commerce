@@ -1,9 +1,9 @@
-import { CategoryModel } from './../../../models/CategoryModel';
-import { BrandModel } from './../../../models/BrandsModel';
+import { CategoryModel } from '../../../models/CategoryModel';
+import { BrandModel } from '../../../models/BrandsModel';
 import { CategoryService } from 'src/services/category.service';
 import { BrandService } from 'src/services/brand.service';
 import { Product } from 'src/models/ProductModel';
-import { ProductsService } from './../../../services/products.service';
+import { ProductsService } from '../../../services/products.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import {

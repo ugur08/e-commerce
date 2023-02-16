@@ -1,5 +1,5 @@
 import { ToastrService } from 'ngx-toastr';
-import { CategoryModel } from './../../../models/CategoryModel';
+import { CategoryModel } from '../../../models/CategoryModel';
 import { CategoryService } from 'src/services/category.service';
 import { Component, OnInit } from '@angular/core';
 import {

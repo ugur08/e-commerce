@@ -1,5 +1,5 @@
 import { ToastrService } from 'ngx-toastr';
-import { BrandModel } from './../../../models/BrandsModel';
+import { BrandModel } from '../../../models/BrandsModel';
 import { BrandService } from 'src/services/brand.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';

@@ -1,6 +1,5 @@
 import { Store } from '@ngrx/store';
 import { ActivatedRoute } from '@angular/router';
-import { ProductDetailService } from './../../../services/product-detail.service';
 import { Product } from './../../../models/ProductModel';
 import { ProductsService } from './../../../services/products.service';
 import { Component, OnInit } from '@angular/core';
@@ -15,7 +14,7 @@ export class ProductDetailComponent implements OnInit {
   products: Product[] = [];
   userName: string;
   constructor(
-    private product: ProductDetailService,
+    private product: ProductsService,
     private activatedRoute: ActivatedRoute,
     private store: Store<any>
   ) {}

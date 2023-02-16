@@ -1,7 +1,7 @@
 import { ToastrService } from 'ngx-toastr';
-import { CategoryModel } from './../../../models/CategoryModel';
+import { CategoryModel } from '../../../models/CategoryModel';
 import { CategoryService } from 'src/services/category.service';
-import { BrandModel } from './../../../models/BrandsModel';
+import { BrandModel } from '../../../models/BrandsModel';
 import { BrandService } from 'src/services/brand.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ProductsService } from 'src/services/products.service';
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-productaddform',
   templateUrl: './productaddform.component.html',
-  styleUrls: ['./productaddform.component.css'],
+  styleUrls: ['./productaddform.component.html'],
 })
 export class ProductaddformComponent implements OnInit {
   productAdd: FormGroup;
