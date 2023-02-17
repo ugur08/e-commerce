@@ -18,6 +18,7 @@ ul {
   -ms-transform: scale(1.2);
   -moz-transform: scale(1.2);
   transform: scale(1.2);
+  transition: all 0.3s;
 }
 .menufix {
   top: 0;
@@ -25,4 +26,19 @@ ul {
   width: 100%;
   background-color: white;
   z-index: 1;
+}
+.bi-instagram:hover {
+  color: pink;
+}
+.bi-whatsapp:hover {
+  color: green;
+}
+.bi-twitter:hover {
+  color: blue;
+}
+.bi-facebook:hover {
+  color: blue;
+}
+.bi-linkedin:hover {
+  color: blue;
 }

@@ -57,3 +57,21 @@
   color: #aaa;
   margin-bottom: 0;
 }
+.bi-instagram:hover {
+  color: pink;
+}
+.bi-whatsapp:hover {
+  color: green;
+}
+.bi-twitter:hover {
+  color: blue;
+}
+.bi-facebook:hover {
+  color: blue;
+}
+.bi-linkedin:hover {
+  color: blue;
+}
+i {
+  transition: all 0.3s;
+}
